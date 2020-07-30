@@ -12,9 +12,9 @@ const convert = (from, to, fileName) => {
   console.log(fileName);
   sharp(`./${from}/${fileName}`)
     // .sharpen()
-    .blur(20)
-    // .resize({ width: 500 })
+    // .blur(20)
+    .resize({ width: 500 })
     .toFile(`./${to}/${fileName}`)
-    .then((info) => info)
-    .catch((err) => err);
+    .then((info) => console.log(info))
+    .catch((err) => console.log(err));
 };
