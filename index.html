@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .position-relative {
+        max-width: 700px;
+        position: relative;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+      }
+      .img-blur {
+        opacity: 0;
+        opacity: 1;
+        transition: opacity 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="position-relative">
+      <img src="inputFolder/3935D15org.jpg" />
+      <img class="img-blur" src="outputFolder/3935D15org.jpg" />
+    </div>
+  </body>
+</html>
