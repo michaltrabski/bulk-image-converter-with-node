@@ -3,7 +3,7 @@ const fs = require("fs");
 const { getAudioDurationInSeconds } = require("get-audio-duration");
 
 const folder = "audiobooks/";
-const myJson = { url: "www.alsjkfdsldjkf.pl/asdasd", audioBooks: [] };
+const myJson = { folderWithMp3: "www.sample-domain.com/sth/", audioBooks: [] };
 
 fs.readdir(path.resolve(folder), (err, items) => {
   if (err) console.log("err = ", err);
@@ -21,6 +21,7 @@ fs.readdir(path.resolve(folder), (err, items) => {
       author: "",
       image: "",
       allFilesDuration: 0,
+      subFolder: item + "/",
       files: [],
     };
     fs.readdir(path.resolve(folder + item), (err, files) => {
@@ -57,6 +58,9 @@ fs.readdir(path.resolve(folder), (err, items) => {
   setTimeout(() => {
     createJsonFile("audioBooks.json", myJson);
   }, 5000);
+  setTimeout(() => {
+    createJsonFile("audioBooks.json", myJson);
+  }, 10000);
 });
 
 const createJsonFile = (name, fileContent) => {
