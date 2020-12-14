@@ -3,7 +3,11 @@ const fs = require("fs");
 const { getAudioDurationInSeconds } = require("get-audio-duration");
 
 const folder = "audiobooks/";
-const myJson = { folderWithMp3: "www.sample-domain.com/sth/", audioBooks: [] };
+const apiFolder = "api/";
+const myJson = {
+  folderWithMp3: `https://poznaj-testy.hekko24.pl/${folder}`,
+  audioBooks: [],
+};
 
 fs.readdir(path.resolve(folder), (err, items) => {
   if (err) console.log("err = ", err);
@@ -53,13 +57,13 @@ fs.readdir(path.resolve(folder), (err, items) => {
     });
   });
   setTimeout(() => {
-    createJsonFile("audioBooks.json", myJson);
+    createJsonFile(`${apiFolder}audioBooks.json`, myJson);
   }, 1000);
   setTimeout(() => {
-    createJsonFile("audioBooks.json", myJson);
+    createJsonFile(`${apiFolder}audioBooks.json`, myJson);
   }, 5000);
   setTimeout(() => {
-    createJsonFile("audioBooks.json", myJson);
+    createJsonFile(`${apiFolder}audioBooks.json`, myJson);
   }, 10000);
 });
 
