@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "get-audio-duration": "^2.0.3",
-    "sharp": "^0.25.4"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
